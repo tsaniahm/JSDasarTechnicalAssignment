@@ -131,12 +131,14 @@
     //Untuk membuat comment form section muncul saat button "write a comment" ditekan
     elBtnComment.addEventListener("click", event => {
       console.log("clicked")
+      elBtnComment.classList.add("d-none")
       elCommentSection.removeAttribute("class", "d-none")
     })
 
     //untuk memembuat comment form section menghilang serta isi form juga ter-reset saat button cancel ditekan
     elBtnCancel.addEventListener("click", event => {
       elCommentForm.reset()
+      elBtnComment.classList.remove("d-none")
       elCommentSection.setAttribute("class", "d-none")
     })
 
@@ -169,6 +171,7 @@
 
       //untuk menghide form saat setelah melakukan submit dan juga me-reset isi form
       elCommentForm.reset()
+      elBtnComment.classList.remove("class","d-none")
       elCommentSection.setAttribute("class", "d-none")
 
     })
